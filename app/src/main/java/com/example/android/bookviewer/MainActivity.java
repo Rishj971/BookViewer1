@@ -26,11 +26,11 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     public static final String LOG_TAG = MainActivity.class.getName();
     private static final int BOOK_LOADAER_ID = 1;
     private final String Urlpostfix = "&maxResults=25&fields=items(volumeInfo/title,volumeInfo/authors,volumeInfo/imageLinks,volumeInfo/previewLink,searchInfo/textSnippet)";
-    ProgressBar progressBar = (ProgressBar) findViewById(R.id.progress);
-    ListView listView = (ListView) findViewById(R.id.list_item);
-    TextView emptyView = (TextView) findViewById(R.id.empty_view);
-    Button search = (Button) findViewById(R.id.button);
-    EditText editText = (EditText) findViewById(R.id.edit_text);
+    ProgressBar progressBar;
+    ListView listView;
+    TextView emptyView ;
+    Button search ;
+    EditText editText;
     private BookAdapter bookAdapter;
     private String createSearchUrl;
 
@@ -38,6 +38,13 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+         progressBar = (ProgressBar) findViewById(R.id.progress);
+         listView= (ListView) findViewById(R.id.list_item);
+         emptyView = (TextView) findViewById(R.id.empty_view);
+         search = (Button) findViewById(R.id.button);
+         editText = (EditText) findViewById(R.id.edit_text);
+
         setupUI();
 
         search.setOnClickListener(new View.OnClickListener() {

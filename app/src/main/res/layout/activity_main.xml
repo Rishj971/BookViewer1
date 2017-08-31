@@ -4,11 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+
     tools:context="com.example.android.bookviewer.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:orientation="horizontal">
 
         <EditText
@@ -16,7 +18,9 @@
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="3"
-            android:hint="Enter Book Name..." />
+            android:hint="Enter Book Name..."
+            android:textSize="20dp"
+            android:fontFamily="cursive"/>
 
         <Button
             android:id="@+id/button"
@@ -33,6 +37,7 @@
 
         <ListView
             android:id="@+id/list_item"
+
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
@@ -49,7 +54,7 @@
             android:layout_centerInParent="true"
             android:fontFamily="cursive"
             android:textColor="#bb664851"
-            android:textSize="22sp"
+            android:textSize="25sp"
             tools:text="Enter a book name and hit on search button" />
 
 

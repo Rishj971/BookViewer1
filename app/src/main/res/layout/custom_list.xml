@@ -24,9 +24,9 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:fontFamily="monospace"
+
             android:padding="10dp"
-            android:textSize="20dp"
+            android:textSize="15dp"
             tools:text="Half Girlfriend" />
 
         <TextView
@@ -35,19 +35,16 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/title"
             android:layout_marginLeft="22dp"
-            android:fontFamily="monospace"
-            android:textSize="20dp"
+            android:textSize="13dp"
             tools:text="Chetan Bhagat" />
 
         <TextView
             android:id="@+id/description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="15dp"
             android:layout_marginTop="10dp"
-            android:fontFamily="monospace"
-            android:maxLines="1"
-            android:textSize="20dp"
+            android:textSize="14dp"
             tools:text="Tale of a girl and boy" />
 
 

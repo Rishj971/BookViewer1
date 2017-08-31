@@ -25,6 +25,8 @@ import static com.example.android.bookviewer.MainActivity.LOG_TAG;
 
 public final class QueryUtil {
 
+    static String  imageLink;
+
     private QueryUtil() {
     }
 
@@ -106,7 +108,7 @@ public final class QueryUtil {
     }
 
     //  Parse JSON string to get book list
-    private static ArrayList<Book> extractBooks(String BooksJSONString) {
+    public static ArrayList<Book> extractBooks(String BooksJSONString) {
         if (BooksJSONString == null) {
             return null;
         }
@@ -130,8 +132,9 @@ public final class QueryUtil {
                 String bookTitle;
                 String previewLink;
                 String author;
-                JSONObject imageLinks = null;
-                String image = null;
+             JSONObject  imageLinks ;
+
+
                 if (currentBook.has("volumeInfo")) {
                     volumeInfo = currentBook.getJSONObject("volumeInfo");
 
@@ -145,15 +148,23 @@ public final class QueryUtil {
                         author = "No author information";
                     }
 
-                    imageLinks.getString("thumbnail");
-                    imageLinks.getString("smallThumbnail");
+                  // volumeInfo =  imageLinks.getString("thumbnail");
+                    //imageLinks.getString("smallThumbnail");
+
+                    if (volumeInfo.has("imagelinks"))
+                    {
+                        imageLinks = volumeInfo.getJSONObject("imageLinks");
+                   imageLink = imageLinks.getString("smallThumbnail");
+
+
+                    }
 
 
                 } else {
                     bookTitle = null;
                     author = null;
                     previewLink = null;
-                    image = null;
+                    //image = null;
                 }
 
                 String description;
@@ -169,7 +180,7 @@ public final class QueryUtil {
                     description = null;
                 }
 
-                books.add(new Book(previewLink, image, bookTitle, author, description));
+                books.add(new Book(previewLink, imageLink, bookTitle, author, description));
             }
         } catch (JSONException e) {
             Log.e("QueryUtils", "Problem parsing the book volume JSON results", e);

@@ -1,7 +1,6 @@
 package com.example.android.bookviewer;
 
 
-import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -18,7 +17,7 @@ import java.util.ArrayList;
 public class BookAdapter extends ArrayAdapter<Book> {
 
     ImageView imageView;
-    Context context;
+
 
     public BookAdapter(MainActivity mainActivity, ArrayList<Book> books) {
         super(mainActivity, 0, books);
@@ -42,7 +41,7 @@ public class BookAdapter extends ArrayAdapter<Book> {
         Book currentBook = getItem(position);
 
         imageView = (ImageView) convertView.findViewById(R.id.image_view);
-        Picasso.with(context).load(currentBook.getImage()).into(imageView);
+        Picasso.with(getContext()).load(currentBook.getImage()).into(imageView);
         holder.titleView.setText(currentBook.getTitle());
         holder.authorView.setText(currentBook.getDescription());
         holder.descriptionView.setText(currentBook.getDescription());
